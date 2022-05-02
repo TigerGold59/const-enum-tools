@@ -1,14 +1,14 @@
 #![feature(generic_const_exprs)]
 
 /// An enum trait that shows a count of its variants.
-pub trait VariantCountable {
+pub trait VariantCount {
     const VARIANT_COUNT: usize;
 }
 
 /// An enum trait that allows getting the index of its variant
 /// and thereby the name of the variant.
-pub trait VariantIterable where
-    Self: VariantCountable,
+pub trait VariantList where
+    Self: VariantCount,
     [(); Self::VARIANT_COUNT]:,
 {
 
